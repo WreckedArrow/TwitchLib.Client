@@ -385,6 +385,11 @@ namespace TwitchLib.Client
         public event EventHandler<OnRitualNewChatterArgs> OnRitualNewChatter;
 
         /// <summary>
+        /// Fires when an chat announcement is received.
+        /// </summary>
+        public event EventHandler<OnAnnouncementArgs> OnAnnouncement;
+
+        /// <summary>
         /// Occurs when chatting in a channel that requires a verified email without a verified email attached to the account.
         /// </summary>
         public event EventHandler<OnRequiresVerifiedEmailArgs> OnRequiresVerifiedEmail;
@@ -1450,6 +1455,10 @@ namespace TwitchLib.Client
                 case MsgIds.PrimePaidUprade:
                     PrimePaidSubscriber primePaidSubscriber = new PrimePaidSubscriber(ircMessage);
                     OnPrimePaidSubscriber?.Invoke(this, new OnPrimePaidSubscriberArgs { PrimePaidSubscriber = primePaidSubscriber, Channel = ircMessage.Channel });
+                    break;
+                case MsgIds.Announcement:
+                    Announcement announcement = new Announcement(ircMessage);
+                    OnAnnouncement?.Invoke(this, new OnAnnouncementArgs { Announcement = announcement, Channel = ircMessage.Channel });
                     break;
                 default:
                     OnUnaccountedFor?.Invoke(this, new OnUnaccountedForArgs { BotUsername = TwitchUsername, Channel = ircMessage.Channel, Location = "UserNoticeHandling", RawIRC = ircMessage.ToString() });

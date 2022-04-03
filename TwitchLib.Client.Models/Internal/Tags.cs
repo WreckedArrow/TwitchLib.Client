@@ -22,9 +22,10 @@
         public const string MessageId = "message-id";
         public const string Mod = "mod";
         public const string MsgId = "msg-id";   // Valid values: sub, resub, subgift, anonsubgift, submysterygift, giftpaidupgrade, rewardgift, 
-                                                // anongiftpaidupgrade, raid, unraid, ritual, bitsbadgetier
+                                                // anongiftpaidupgrade, raid, unraid, ritual, bitsbadgetier, announcement
         public const string MsgParamDisplayname = "msg-param-displayName";                      // Sent only on raid
-        public const string MsgParamLogin = "msg-param-login";                                  // Sent only on raid
+        public const string MsgParamLogin = "msg-param-login";
+        public const string MsgParamColor = "msg-param-color";                                  // Sent only on announcement
         public const string MsgParamCumulativeMonths = "msg-param-cumulative-months";           // Sent only on sub, resub
         public const string MsgParamMonths = "msg-param-months";                                // Sent only on subgift, anonsubgift
         public const string MsgParamPromoGiftTotal = "msg-param-promo-gift-total";              // Sent only on anongiftpaidupgrade, giftpaidupgrade

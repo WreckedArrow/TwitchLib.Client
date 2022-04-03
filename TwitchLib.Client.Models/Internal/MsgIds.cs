@@ -9,6 +9,7 @@
         public const string AlreadyR9KOn = "already_r9k_on";
         public const string AlreadySubsOff = "already_subs_off";
         public const string AlreadySubsOn = "already_subs_on";
+        public const string Announcement = "announcement";
         public const string BadHostHosting = "bad_host_hosting";
         public const string BadUnbanNoBan = "bad_unban_no_ban";
         public const string BanSuccess = "ban_success";
